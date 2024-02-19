@@ -2,6 +2,24 @@
 on:
 # მითიტებული მოდული გვეხმარება რომელ ბრანჩზე უნდა გაეშვას მითითებული pipeline
   workflow_dispatch:
+    inputs:
+      environment:
+        type: environment
+        description: select the environment
+        default: test
+      boolean:
+        type: boolean
+        description: with or without test
+        default: true
+      someoptions:
+        type: choice
+        description: select version
+        options:
+          - "1.1"
+          - "2.2"
+          - "3.3"
+
+
   push:
     branches: [ main ]
 
@@ -30,4 +48,3 @@ jobs:
           cd test123
           ls 
           pwd
-          who
