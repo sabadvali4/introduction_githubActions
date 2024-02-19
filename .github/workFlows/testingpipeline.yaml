@@ -1,0 +1,30 @@
+
+on:
+# მითიტებული მოდული გვეხმარება რომელ ბრანჩზე უნდა გაეშვას მითითებული pipeline
+  workflow_dispatch:
+  push:
+    branches: [ main ]
+
+
+jobs:
+  test_job:
+    name: testjob
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Clone 
+        users: actions/checkout@v2
+        
+      - name: Set up python
+        uses: actions/setuo-python@v2
+        with:
+          python-version: '3.9'
+
+
+      - name: test our shell script
+        run: |
+          pip install pandas
+          pip install setuptools
+          ls 
+          pwd
+          whoim 
