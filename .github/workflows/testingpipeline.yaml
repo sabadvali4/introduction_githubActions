@@ -43,6 +43,7 @@ jobs:
         run: |
           pip install pandas
           pip install setuptools
+          echo ${{ inputs.someoptions.options}}
           mkdir test123
           ls
           cd test123
