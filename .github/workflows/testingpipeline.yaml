@@ -25,6 +25,9 @@ jobs:
         run: |
           pip install pandas
           pip install setuptools
+          mkdir test123
+          ls
+          cd test123
           ls 
           pwd
           who
